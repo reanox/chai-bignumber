@@ -15,7 +15,7 @@ module.exports = function (BigNumber) {
     var isBigNumber = function (object) {
       return object.isBigNumber ||
         object instanceof BigNumber ||
-        (object.constructor && object.constructor.name === 'BigNumber');
+        (object.constructor && object.constructor.name === 'BN');
     };
 
     var convert = function (value, dp, rm) {
