@@ -21,10 +21,8 @@ module.exports = function (BigNumber) {
     var convert = function (value, dp, rm) {
       var number;
 
-      if (typeof value === 'string' || typeof value === 'number') {
+      if (typeof value === 'string' || typeof value === 'number' || isBigNumber(value)) {
         number = new BigNumber(value);
-      } else if (isBigNumber(value)) {
-        number = value;
       } else {
         new chai.Assertion(value).assert(false,
           'expected #{act} to be an instance of string, number or BigNumber');
